@@ -24,6 +24,11 @@ function App() {
 
       spotify.setAccessToken(_token);
 
+      dispatch({
+        type: "SET_SPOTIFY",
+        payload: spotify,
+      });
+
       spotify.getMe().then((me) => {
         dispatch({
           type: "SET_USER",
@@ -41,7 +46,7 @@ function App() {
 
       spotify.getPlaylist("37i9dQZEVXcIc1NsCETnzu").then((discoverWeekly) => {
         dispatch({
-          type: "SET_DISCOVER_WEEKLY",
+          type: "SET_CURRENT_PLAYLIST",
           payload: discoverWeekly,
         });
 

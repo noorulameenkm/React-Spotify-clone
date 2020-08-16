@@ -19,14 +19,17 @@ const reducer = (state = initialState, action) => {
     case "SET_PLAYLIST":
       return { ...state, playLists: action.payload };
 
-    case "SET_DISCOVER_WEEKLY":
-      return { ...state, discoverWeekly: action.payload };
+    case "SET_CURRENT_PLAYLIST":
+      return { ...state, currentPlayList: action.payload };
 
     case "SET_CURRENT_TRACK":
       return { ...state, currentTrack: action.payload };
 
     case "SET_PLAYING":
       return { ...state, playing: action.payload };
+
+    case "SET_SPOTIFY":
+      return { ...state, spotify: action.payload };
 
     default:
       return state;
